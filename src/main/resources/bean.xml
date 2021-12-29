@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<beans>
+    <bean id ="accountDao" class = "com.lzl.dao.impl.JdbcAccountDaoImpl">
+        <property name="ConnectionUtils" ref="connectionUtils"/>
+    </bean>
+
+    <bean id="transferService" class="com.lzl.service.impl.TransferServiceImpl">
+        <property name ="AccountDao" ref = "accountDao"></property>
+    </bean>
+
+    <bean id="connectionUtils" class="com.lzl.util.ConnectionUtils"></bean>
+
+    <bean id="transactionManager" class="com.lzl.util.TransactionManager">
+        <property name="ConnectionUtils" ref="connectionUtils"/>
+    </bean>
+
+</beans>

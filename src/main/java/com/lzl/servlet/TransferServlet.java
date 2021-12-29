@@ -1,4 +1,5 @@
 package com.lzl.servlet;
+import com.lzl.factory.BeanFactory;
 import com.lzl.pojo.Result;
 import com.lzl.service.TransferService;
 import com.lzl.service.impl.TransferServiceImpl;
@@ -15,7 +16,8 @@ import java.io.IOException;
 @WebServlet(name = "transferServlet",urlPatterns = "/transferServlet")
 public class TransferServlet extends HttpServlet {
 
-    private TransferService transferService = new TransferServiceImpl();
+    //private TransferService transferService = new TransferServiceImpl();
+    private TransferService transferService = (TransferService) BeanFactory.getBean("transferService");
 
 
     @Override
