@@ -5,12 +5,11 @@ import java.sql.SQLException;
 public class TransactionManager {
 
    /* private TransactionManager() {
-    }*/
-
+    }
     private  static  TransactionManager transactionManager = new TransactionManager();
     public static TransactionManager getInstance(){
         return transactionManager;
-    }
+    }*/
 
     private ConnectionUtils connectionUtils;
 

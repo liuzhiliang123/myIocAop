@@ -57,6 +57,7 @@ public class BeanFactory {
                     }
                 }
                 map.put(parentId,parentObject);
+                System.out.println(map.toString());
             }
 
         } catch (DocumentException e) {

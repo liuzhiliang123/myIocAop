@@ -15,4 +15,8 @@
         <property name="ConnectionUtils" ref="connectionUtils"/>
     </bean>
 
+    <bean id="proxyFactory" class="com.lzl.factory.ProxyFactory">
+        <property name="TransactionManager" ref="transactionManager"/>
+    </bean>
+
 </beans>

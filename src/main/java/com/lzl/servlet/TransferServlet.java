@@ -1,5 +1,6 @@
 package com.lzl.servlet;
 import com.lzl.factory.BeanFactory;
+import com.lzl.factory.ProxyFactory;
 import com.lzl.pojo.Result;
 import com.lzl.service.TransferService;
 import com.lzl.service.impl.TransferServiceImpl;
@@ -17,8 +18,9 @@ import java.io.IOException;
 public class TransferServlet extends HttpServlet {
 
     //private TransferService transferService = new TransferServiceImpl();
-    private TransferService transferService = (TransferService) BeanFactory.getBean("transferService");
-
+//    private TransferService transferService = (TransferService) BeanFactory.getBean("transferService");
+    private ProxyFactory proxyFactory = (ProxyFactory) BeanFactory.getBean("proxyFactory");
+    private TransferService transferService = (TransferService) proxyFactory.getJdkProxy(BeanFactory.getBean("transferService")) ;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
